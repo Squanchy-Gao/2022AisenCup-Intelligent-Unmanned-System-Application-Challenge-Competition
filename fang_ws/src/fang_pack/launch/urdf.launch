@@ -1,0 +1,15 @@
+<launch>
+    
+    <!-- 添加关节状态发布节点 -->
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" />
+
+    <!-- 添加机器人状态发布节点 -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
+
+    <!-- 设置参数 -->
+    <param name="robot_description" textfile="$(find wheeltec_robot_urdf)/urdf/brushless_senior_diff.urdf" />
+
+    <!-- 启动 rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" />
+
+</launch>

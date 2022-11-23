@@ -1,0 +1,15 @@
+<launch>
+    
+    <param name="use_sim_time" value="false"/>
+
+    <!-- 地图保存  -->
+    <arg name="mapname" value="$(find fang_pack)/map/corridor_a.yaml" />
+    <node name="map_save" pkg="map_server" type="map_saver" args="-f $(arg mapname)" />
+
+    <!-- 地图读取 -->
+    <!-- 设置地图的配置文件 -->
+    <!-- <arg name="map" default="corridor.yaml" /> -->
+    <!-- 运行地图服务器，并且加载设置的地图-->
+    <!-- <node name="map_server" pkg="map_server" type="map_server" args="$(find fang_pack)/map/$(arg map)"/> -->
+
+</launch>

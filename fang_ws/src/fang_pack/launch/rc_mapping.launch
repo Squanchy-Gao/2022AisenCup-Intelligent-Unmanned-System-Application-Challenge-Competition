@@ -1,0 +1,32 @@
+<launch>
+
+    <param name="use_sim_time" value="false"/>
+
+    <node pkg="fang_pack" type="odom_publisher.py" name="odom_publisher"/>
+
+    <!-- 添加关节状态发布节点
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" /> -->
+    
+    <!-- 添加机器人状态发布节点 -->
+    <!-- <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" /> -->
+
+    
+    <node pkg="tf" type="static_transform_publisher" name="rslidar_tf_broadcaster" args="0 0 0 0 0 0 base_footprint rslidar 100" />
+    <!--                                                                      args= x       y   z yaw pitch roll-->
+
+    <!-- 开启rslidar -->
+    <include file="$(find fang_pack)/launch/lidar16.launch" />
+
+    <!-- 开启wheeltec robot-->
+    <include file="$(find turn_on_wheeltec_robot)/launch/turn_on_wheeltec_robot.launch" />
+
+    <!-- 开启hector_mapping-->
+    <include file="$(find fang_pack)/launch/hector_mapping.launch" />
+
+
+
+    
+
+
+
+</launch>
