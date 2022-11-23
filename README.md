@@ -1,2 +1,2 @@
-# 2022AisenCup-Intelligent-Unmanned-System-Application-Challenge-Competition
+# 2022年“爱生杯”智能无人系统应用挑战赛
 快递速达赛道第二名，第一遍使用LEGO-LOAM建图，比赛时使用ROS自带的amcl和Navgation包实现定位和导航功能。
